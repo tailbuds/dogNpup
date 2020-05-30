@@ -9,5 +9,5 @@ npm install
 Run the App
 
 ```bash
-ionic serve
+npm start
 ```
