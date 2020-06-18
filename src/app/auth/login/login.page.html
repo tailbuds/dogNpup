@@ -2,9 +2,11 @@
   <ion-header>
     <ion-toolbar>
       <ion-nav>
-        <ion-title>
-          <img alt="logo" src="../images/logo.png">
-        </ion-title>
+        <ion-row style="justify-content: center">
+          <img alt="logo"
+            src="https://images.unsplash.com/photo-1588614478415-f25a77edc40f?ixlib=rb-1.2.1&auto=format&fit=crop&w=683&q=80"
+            height="38px" width="402px">
+        </ion-row>
       </ion-nav>
     </ion-toolbar>
   </ion-header>
@@ -15,30 +17,34 @@
         <h5>We Don't know this email Please add another one</h5>
       </ion-text>
     </ion-row>
+
     <ion-row style="justify-content: center">
+
       <form>
-        <ion-list lines="full" class="ion-no-margin ion-no-padding">
-          <ion-item>
-            <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-input required type="text"></ion-input>
-          </ion-item>
+        <ion-card>
+          <ion-list lines="full" class="ion-no-margin ion-no-padding">
+            <ion-item>
+              <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required type="text"></ion-input>
+            </ion-item>
 
-          <ion-item>
-            <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
-            </ion-label>
-            <ion-input required type="text"></ion-input>
-          </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+              </ion-label>
+              <ion-input required type="text"></ion-input>
+            </ion-item>
 
 
-        </ion-list>
+          </ion-list>
 
-        <div class="ion-padding">
-          <ion-button expand="block" type="submit" class="ion-no-margin">Sign In</ion-button>
-        </div>
+          <div class="ion-padding">
+            <ion-button expand="block" type="submit" class="ion-no-margin">Sign In</ion-button>
+          </div>
+        </ion-card>
       </form>
-    </ion-row>
 
+    </ion-row>
     <ion-row style="justify-content: center">
       <app-forgot-password></app-forgot-password>
     </ion-row>
