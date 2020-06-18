@@ -1,0 +1,47 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-nav>
+        <ion-title>
+          <img alt="logo" src="../images/logo.png">
+        </ion-title>
+      </ion-nav>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-row style="justify-content: center">
+      <ion-text color="danger">
+        <h5>We Don't know this email Please add another one</h5>
+      </ion-text>
+    </ion-row>
+    <ion-row style="justify-content: center">
+      <form>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">Email <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Password <ion-text color="danger">*</ion-text>
+            </ion-label>
+            <ion-input required type="text"></ion-input>
+          </ion-item>
+
+
+        </ion-list>
+
+        <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin">Sign In</ion-button>
+        </div>
+      </form>
+    </ion-row>
+
+    <ion-row style="justify-content: center">
+      <app-forgot-password></app-forgot-password>
+    </ion-row>
+
+  </ion-content>
+</ion-app>
