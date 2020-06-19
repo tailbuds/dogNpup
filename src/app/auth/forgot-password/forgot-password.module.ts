@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import { ForgotPasswordPage } from './forgot-password.page';
     FormsModule,
     IonicModule,
     ForgotPasswordPageRoutingModule,
+    RouterModule,
   ],
   declarations: [ForgotPasswordPage],
 })

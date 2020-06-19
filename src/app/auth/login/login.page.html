@@ -1,54 +1,66 @@
-<ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-nav>
-        <ion-row style="justify-content: center">
-          <img alt="logo" src="../../../assets/logo.png" height="50px" width="200px">
-        </ion-row>
-      </ion-nav>
-    </ion-toolbar>
-  </ion-header>
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-nav>
+          <ion-row style="justify-content: center">
+            <img alt="logo" src="../../../assets/logo.png" height="40px" width="120px">
+          </ion-row>
+        </ion-nav>
+      </ion-toolbar>
+    </ion-header>
 
-  <ion-content>
-    <ion-row style="justify-content: center">
-      <ion-text color="danger">
-        <h5>We Don't know this email Please add another one</h5>
-      </ion-text>
-    </ion-row>
+    <ion-content>
+      <ion-row class="ion-margin-top" style="justify-content: center">
+        <ion-col size="6" class="ion-text-center">
+          <ion-text color="danger">
+            <p><strong> Don't know this email Please add another one</strong></p>
+          </ion-text>
+        </ion-col>
+      </ion-row>
 
-    <ion-row style="justify-content: center">
+      <ion-row style="justify-content: center">
 
-      <form>
-        <ion-card>
-          <ion-list lines="full" class="ion-no-margin ion-no-padding">
+        <form>
+          <ion-card class="ion-padding">
+            <ion-list lines="full" class="ion-no-margin ion-no-padding">
+              <div class="ion-text-center">
+                <ion-title><strong>Log In</strong></ion-title>
+              </div>
 
-            <ion-item>
-              <ion-label position="stacked">EMAIL <ion-text color="danger"></ion-text>
-              </ion-label>
-              <ion-input required type="text"></ion-input>
-            </ion-item>
+              <ion-item lines="none">
+                <ion-label position="stacked">EMAIL</ion-label>
+                <ion-input id="rounded" required type="text"></ion-input>
+              </ion-item><br>
 
-            <ion-item>
-              <ion-label position="stacked">PASSWORD<ion-text color="danger"></ion-text>
-              </ion-label>
-              <ion-input required type="text"></ion-input>
-            </ion-item>
+              <ion-item lines="none">
+                <ion-label position="stacked">PASSWORD</ion-label>
+                <ion-input id="rounded" required type="text"></ion-input>
+              </ion-item><br>
 
 
-          </ion-list>
+            </ion-list>
 
-          <div class="ion-padding">
-            <ion-button expand="block" shape="round" color="warning" type="submit" class="ion-no-margin ">
-              <ion-text color="light">Sign In</ion-text>
+          </ion-card>
+        </form>
+
+
+      </ion-row>
+
+      <ion-row style="justify-content: center">
+        <ion-col size="9" size-sm="2">
+          <div>
+            <ion-button expand="block" size="medium" color="warning" type="submit">
+              <ion-text color="light"><strong>Sign In</strong> </ion-text>
             </ion-button>
           </div>
-        </ion-card>
-      </form>
+        </ion-col>
+      </ion-row>
 
-    </ion-row>
-    <ion-row style="justify-content: center">
-      <app-forgot-password></app-forgot-password>
-    </ion-row>
 
-  </ion-content>
-</ion-app>
+      <ion-row class="ion-padding-top" style="justify-content: center">
+        <app-forgot-password></app-forgot-password>
+      </ion-row>
+    </ion-content>
+  </ion-app>
+</body>
