@@ -1,0 +1,16 @@
+<ion-card class="ion-text-center ion-margin-vertical">
+    <ion-img id="card-img" [src]="breed.imageUrl"></ion-img>
+  <ion-card-header>
+    <div id="content">
+      <h1>Name : {{ breed.name }}</h1>
+    </div>
+  </ion-card-header>
+  <ion-button id="delete-btn" class="btn">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Delete
+  </ion-button>
+  <ion-button id="update-btn" class="btn">
+    <ion-icon name="create-outline" slot="start"></ion-icon>
+    Update
+  </ion-button>
+</ion-card>

@@ -7,6 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePagePage implements OnInit {
 
+  breeds = [
+    {
+      imageUrl : '../../../../assets/dog1.jpg',
+      name: '',
+    },
+    {
+      imageUrl : '../../../../assets/dog2.jpg',
+      name: '',
+    },
+    {
+      imageUrl : '../../../../assets/dog3.jpg',
+      name: '',
+    },
+    {
+      imageUrl : '../../../../assets/dog4.jpg',
+      name: '',
+    },
+    {
+      imageUrl : '../../../../assets/dog2.jpg',
+      name: '',
+    },
+    {
+      imageUrl : '../../../../assets/dog3.jpg',
+      name: '',
+    },
+    {
+      imageUrl : '../../../../assets/dog4.jpg',
+      name: '',
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {

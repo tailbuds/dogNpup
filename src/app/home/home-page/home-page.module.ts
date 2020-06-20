@@ -1,3 +1,4 @@
+import { BreedCardComponent } from './breed-card/breed-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,6 @@ import { HomePagePage } from './home-page.page';
     IonicModule,
     HomePagePageRoutingModule
   ],
-  declarations: [HomePagePage]
+  declarations: [HomePagePage, BreedCardComponent]
 })
 export class HomePagePageModule {}
