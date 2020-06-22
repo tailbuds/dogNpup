@@ -1,3 +1,4 @@
+import { HomePageService } from './home-page.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,40 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePagePage implements OnInit {
 
-  breeds = [
-    {
-      imageUrl : '../../../../assets/dog1.jpg',
-      name: '',
-    },
-    {
-      imageUrl : '../../../../assets/dog2.jpg',
-      name: '',
-    },
-    {
-      imageUrl : '../../../../assets/dog3.jpg',
-      name: '',
-    },
-    {
-      imageUrl : '../../../../assets/dog4.jpg',
-      name: '',
-    },
-    {
-      imageUrl : '../../../../assets/dog2.jpg',
-      name: '',
-    },
-    {
-      imageUrl : '../../../../assets/dog3.jpg',
-      name: '',
-    },
-    {
-      imageUrl : '../../../../assets/dog4.jpg',
-      name: '',
-    }
-  ];
+  public breeds;
 
-  constructor() { }
+  constructor( private homePageService: HomePageService) { }
 
   ngOnInit() {
+  }
+
+  ionViewDidEnter() {
+    this.breeds = this.homePageService.getAllBreeds();
   }
 
 }

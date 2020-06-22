@@ -5,11 +5,11 @@
       <h1>Name : {{ breed.name }}</h1>
     </div>
   </ion-card-header>
-  <ion-button id="delete-btn" class="btn">
+  <ion-button id="delete-btn" class="btn" (click)="onDelete(breed.id)">
     <ion-icon name="trash" slot="start"></ion-icon>
     Delete
   </ion-button>
-  <ion-button id="update-btn" class="btn">
+  <ion-button id="update-btn" class="btn" [routerLink]="['/','home','homePage','breedForm']">
     <ion-icon name="create-outline" slot="start"></ion-icon>
     Update
   </ion-button>

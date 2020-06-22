@@ -1,3 +1,4 @@
+import { HomePageService } from './../home-page.service';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,8 +10,11 @@ export class BreedCardComponent implements OnInit {
 
   @Input() breed;
 
-  constructor() { }
+  constructor() {  }
 
   ngOnInit() {}
 
+  onDelete() {
+    console.log('Id : ' + this.breed.id );
+  }
 }
