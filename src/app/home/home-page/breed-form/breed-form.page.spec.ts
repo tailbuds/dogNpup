@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { BreedFormPagePage } from './breed-form-page.page';
+import { BreedFormPage } from './breed-form.page';
 
-describe('BreedFormPagePage', () => {
-  let component: BreedFormPagePage;
-  let fixture: ComponentFixture<BreedFormPagePage>;
+describe('BreedFormPage', () => {
+  let component: BreedFormPage;
+  let fixture: ComponentFixture<BreedFormPage>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BreedFormPagePage ],
+      declarations: [ BreedFormPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(BreedFormPagePage);
+    fixture = TestBed.createComponent(BreedFormPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

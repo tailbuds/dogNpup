@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { BreedFormPagePageRoutingModule } from './breed-form-page-routing.module';
+import { BreedFormPageRoutingModule } from './breed-form-routing.module';
 
-import { BreedFormPagePage } from './breed-form-page.page';
+import { BreedFormPage } from './breed-form.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BreedFormPagePageRoutingModule
+    BreedFormPageRoutingModule
   ],
-  declarations: [BreedFormPagePage]
+  declarations: [BreedFormPage]
 })
-export class BreedFormPagePageModule {}
+export class BreedFormPageModule {}

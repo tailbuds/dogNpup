@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { BreedFormPagePage } from './breed-form-page.page';
+import { BreedFormPage } from './breed-form.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: BreedFormPagePage
-  },
-  {
-    path: ':breedId',
-    component: BreedFormPagePage
+    component: BreedFormPage
   }
 ];
 
@@ -18,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class BreedFormPagePageRoutingModule {}
+export class BreedFormPageRoutingModule {}

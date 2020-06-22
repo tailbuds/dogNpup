@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: 'breedForm',
-    loadChildren: () => import('../home-Page/breed-form-page/breed-form-page.module').then( m => m.BreedFormPagePageModule)
+    loadChildren: () => import('./breed-form/breed-form.module').then( m => m.BreedFormPageModule)
   }
 ];
 
