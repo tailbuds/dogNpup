@@ -1,3 +1,4 @@
+import { Breed } from './../../breed.model';
 import { HomePageService } from './../home-page.service';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -8,13 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BreedCardComponent implements OnInit {
 
-  @Input() breed;
+  @Input() breed: Breed;
 
-  constructor() {  }
+  constructor( private homeService: HomePageService ) {  }
 
   ngOnInit() {}
 
   onDelete() {
-    console.log('Id : ' + this.breed.id );
+    this.homeService.deleteBreed(this.breed.id);
   }
 }

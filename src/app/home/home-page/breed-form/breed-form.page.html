@@ -11,51 +11,51 @@
   <div id="header">
     <h1 class="ion-no-margin ion-text-center title">Upload Data</h1>
   </div>
-  <ion-grid class="ion-no-padding">
-    <div class="form">
+  <form class="form"  #breedForm="ngForm" (ngSubmit)="onSubmit(breedForm)">
+    <ion-grid class="ion-no-padding">
       <ion-row class="ion-justify-content-center">
-        <ion-col size="10" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="name"></ion-input>
+            <ion-input type="name" id="input-btn" placeholder="name" ngModel name="breedName" required></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="10" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="tagline"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="10" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="background image"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="10" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="puppy image"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="min life"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="max life"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="learning rate"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="size"></ion-input>
           </ion-item>
@@ -64,32 +64,32 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center">
           <ion-row class="ion-justify-content-center">
-            <ion-col size="10" size-md="12" class="ion-align-items-center ion-text-center">
+            <ion-col size="12" size-md="12" class="ion-align-items-center ion-text-center">
               <ion-item lines="none">
                 <ion-input type="name" id="input-btn" placeholder="height unit"></ion-input>
               </ion-item>
             </ion-col>
             <ion-row class="ion-justify-content-center">
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
                   <ion-input type="name" id="input-btn" placeholder="min male height"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
                   <ion-input type="name" id="input-btn" placeholder="max male height"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
             <ion-row class="ion-justify-content-center">
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="min female height"></ion-input>
+                  <ion-input type="name" class="small-font" id="input-btn" placeholder="min female height"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="max female height"></ion-input>
+                  <ion-input type="name" class="small-font" id="input-btn" placeholder="max female height"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -97,32 +97,32 @@
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center">
           <ion-row class="ion-justify-content-center">
-            <ion-col size="10" size-md="12" class="ion-align-items-center ion-text-center">
+            <ion-col size="12" size-md="12" class="ion-align-items-center ion-text-center">
               <ion-item lines="none">
-                <ion-input type="name" id="input-btn" placeholder="height unit"></ion-input>
+                <ion-input type="name" id="input-btn" placeholder="weight unit"></ion-input>
               </ion-item>
             </ion-col>
             <ion-row class="ion-justify-content-center">
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="min male height"></ion-input>
+                  <ion-input type="name" id="input-btn" placeholder="min male weight"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="max male height"></ion-input>
+                  <ion-input type="name" id="input-btn" placeholder="max male weight"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
             <ion-row class="ion-justify-content-center">
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="min female height"></ion-input>
+                  <ion-input type="name" class="small-font" id="input-btn" placeholder="min female weight"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col size="5" size-md="6" class="ion-align-items-center ion-text-center">
+              <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="max female height"></ion-input>
+                  <ion-input type="name" class="small-font" id="input-btn" placeholder="max female weight"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -130,122 +130,122 @@
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="origin country"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="other names"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description1"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description2"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description3"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description4"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description5"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description6"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description7"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description8"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description9"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description10"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description11"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description12"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description13"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="5" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description14"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="10" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="description15"></ion-input>
           </ion-item>
         </ion-col>
-        <ion-col size="10" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
             <ion-input type="name" id="input-btn" placeholder="images ( up to 9 )"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-    </div>
-  </ion-grid>
-  <ion-grid>
-  <ion-row class="ion-justify-content-center" id="add-btn-row">
-    <ion-col size-md="3" class="ion-text-center">
-      <ion-button shape="round" id="add-btn" class="ion-hide-md" color="light" [routerLink]="['/','home','homePage']">
-        <span>Submit</span>
-      </ion-button>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+    </ion-grid>
+    <ion-grid class="ion-no-padding">
+      <ion-row class="ion-justify-content-center" id="add-btn-row">
+        <ion-col size="12" size-md="3">
+          <ion-button type="submit" shape="round" id="add-btn" class="ion-hide-md" color="light" [routerLink]="['/']">
+            <span>Submit</span>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

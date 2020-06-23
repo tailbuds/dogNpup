@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-breed-form',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreedFormPage implements OnInit {
 
+  formData = {
+    name : '',
+  };
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(form: NgForm){
+    console.log(form.value.breedName);
+    this.formData.name = form.value.breedName;
+    console.log(this.formData);
   }
 
 }
