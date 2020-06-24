@@ -16,60 +16,60 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="name" ngModel name="breedName" required></ion-input>
+            <ion-input type="text" id="input-btn" placeholder="name" ngModel name="name" required></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="tagline"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="tagline" placeholder="tagline"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="background image"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="bgImg" placeholder="background image"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="puppy image"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="puppyImg" placeholder="puppy image"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="min life"></ion-input>
+            <ion-input type="number" id="input-btn" ngModel name="minLife" placeholder="min life"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="max life"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="learning rate"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="size"></ion-input>
+            <ion-input type="number" id="input-btn" ngModel name="maxLife" placeholder="max life"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="min litter"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="learningRate" placeholder="learning rate"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="max litter"></ion-input>
+            <ion-input type="number" id="input-btn" ngModel name="minLitter" placeholder="min litter"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="number" id="input-btn" ngModel name="maxLitter" placeholder="max litter"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="size" placeholder="size"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -78,30 +78,30 @@
           <ion-row class="ion-justify-content-center">
             <ion-col size="12" size-md="12" class="ion-align-items-center ion-text-center">
               <ion-item lines="none">
-                <ion-input type="name" id="input-btn" placeholder="height unit"></ion-input>
+                <ion-input type="number" id="input-btn" ngModel name="weightUnit" placeholder="weight unit"></ion-input>
               </ion-item>
             </ion-col>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="min male height"></ion-input>
+                  <ion-input type="number" id="input-btn" ngModel name="minMaleWeight" placeholder="min male weight"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="max male height"></ion-input>
+                  <ion-input type="number" id="input-btn" ngModel name="maxMaleWeight" placeholder="max male weight"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" class="small-font" id="input-btn" placeholder="min female height"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="minFemaleWeight" placeholder="min female weight"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" class="small-font" id="input-btn" placeholder="max female height"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="maxFemaleWeight" placeholder="max female weight"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -111,30 +111,30 @@
           <ion-row class="ion-justify-content-center">
             <ion-col size="12" size-md="12" class="ion-align-items-center ion-text-center">
               <ion-item lines="none">
-                <ion-input type="name" id="input-btn" placeholder="weight unit"></ion-input>
+                <ion-input type="number" id="input-btn" ngModel name="heightUnit" placeholder="height unit"></ion-input>
               </ion-item>
             </ion-col>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="min male weight"></ion-input>
+                  <ion-input type="number" id="input-btn" ngModel name="minMaleHeight" placeholder="min male height"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" id="input-btn" placeholder="max male weight"></ion-input>
+                  <ion-input type="number" id="input-btn" ngModel name="maxMaleHeight" placeholder="max male height"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" class="small-font" id="input-btn" placeholder="min female weight"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="minFemaleHeight" placeholder="min female height"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="name" class="small-font" id="input-btn" placeholder="max female weight"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="maxFemaleHeight" placeholder="max female height"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -144,108 +144,108 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="origin country"></ion-input>
+            <ion-input type="number" id="input-btn" ngModel name="originCountry" placeholder="origin country"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="other names"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description1"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description2"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="otherNames" placeholder="other names"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description3"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc1" placeholder="description1"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description4"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description5"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description6"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc2" placeholder="description2"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description7"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc3" placeholder="description3"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description8"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description9"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description10"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc4" placeholder="description4"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description11"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc5" placeholder="description5"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description12"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc6" placeholder="description6"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description13"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc7" placeholder="description7"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description14"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc8" placeholder="description8"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="desc9" placeholder="description9"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="desc10" placeholder="description10"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="desc11" placeholder="description11"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="desc12" placeholder="description12"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="desc13" placeholder="description13"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" ngModel name="desc14" placeholder="description14"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="description15"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="desc15" placeholder="description15"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="name" id="input-btn" placeholder="images ( up to 9 )"></ion-input>
+            <ion-input type="text" id="input-btn" ngModel name="tagline" placeholder="images ( up to 9 )"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>

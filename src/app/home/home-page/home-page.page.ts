@@ -20,7 +20,6 @@ export class HomePagePage implements OnInit, OnDestroy {
     this.breedSub = this.homePageService.updatedBreed.subscribe( updatedBreeds => {
       this.breeds = updatedBreeds;
     });
-
   }
 
   ionViewDidEnter() {

@@ -1,6 +1,7 @@
 import { Breed } from './../../breed.model';
 import { HomePageService } from './../home-page.service';
 import { Component, OnInit, Input } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-breed-card',
@@ -11,11 +12,32 @@ export class BreedCardComponent implements OnInit {
 
   @Input() breed: Breed;
 
-  constructor( private homeService: HomePageService ) {  }
+  constructor(private homeService: HomePageService, private alertController: AlertController) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onDelete() {
+    const alert = this.alertController.create({
+      header: 'Are you sure?',
+      message: 'Do you really want to delete this breed?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }, {
+          text: 'Delete',
+          handler: () => {
+            this.deleteBreed();
+          }
+        }
+      ]
+    }).then(alertEl => {
+      alertEl.present();
+    });
+
+  }
+
+  deleteBreed() {
     this.homeService.deleteBreed(this.breed.id);
   }
 }
