@@ -7,69 +7,71 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="!isLoading">
   <div id="header">
     <h1 class="ion-no-margin ion-text-center title">Upload Data</h1>
   </div>
-  <ion-grid class="ion-no-padding">
   <form class="form"  #breedForm="ngForm">
+  <ion-grid class="ion-no-padding">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" placeholder="name" ngModel name="name" required></ion-input>
+            <ion-input type="text" id="input-btn" placeholder="name" [ngModel]="fetchedBreed?.name" name="name" required></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="tagline" placeholder="tagline"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.tagline" name="tagline" placeholder="tagline"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="file" id="input-btn" ngModel name="bgImg" placeholder="background image"></ion-input>
+            <ion-label position="stacked" class="file-input-label">background image</ion-label>
+            <ion-input type="file" id="input-btn" [ngModel]="fetchedBreed?.bgImg" name="bgImg" placeholder="background image"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="file" id="input-btn" ngModel name="puppyImg" placeholder="puppy image"></ion-input>
+            <ion-label position="stacked" class="file-input-label">puppy image</ion-label>
+            <ion-input type="file" id="input-btn" [ngModel]="fetchedBreed?.puppyImg" name="puppyImg" placeholder="puppy image"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="number" id="input-btn" ngModel name="minLife" placeholder="min life"></ion-input>
+            <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.minLife" name="minLife" placeholder="min life"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="number" id="input-btn" ngModel name="maxLife" placeholder="max life"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row class="ion-justify-content-center">
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="learningRate" placeholder="learning rate"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="number" id="input-btn" ngModel name="minLitter" placeholder="min litter"></ion-input>
+            <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.maxLife" name="maxLife" placeholder="max life"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="number" id="input-btn" ngModel name="maxLitter" placeholder="max litter"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.learningRate" name="learningRate" placeholder="learning rate"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="size" placeholder="size"></ion-input>
+            <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.minLitter" name="minLitter" placeholder="min litter"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.maxLitter" name="maxLitter" placeholder="max litter"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.size" name="size" placeholder="size"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -78,30 +80,30 @@
           <ion-row class="ion-justify-content-center">
             <ion-col size="12" size-md="12" class="ion-align-items-center ion-text-center">
               <ion-item lines="none">
-                <ion-input type="number" id="input-btn" ngModel name="weightUnit" placeholder="weight unit"></ion-input>
+                <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.weightUnit" name="weightUnit" placeholder="weight unit"></ion-input>
               </ion-item>
             </ion-col>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" id="input-btn" ngModel name="minMaleWeight" placeholder="min male weight"></ion-input>
+                  <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.minMaleWeight" name="minMaleWeight" placeholder="min male weight"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" id="input-btn" ngModel name="maxMaleWeight" placeholder="max male weight"></ion-input>
+                  <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.maxMaleWeight" name="maxMaleWeight" placeholder="max male weight"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="minFemaleWeight" placeholder="min female weight"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" [ngModel]="fetchedBreed?.minFemaleWeight" name="minFemaleWeight" placeholder="min female weight"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="maxFemaleWeight" placeholder="max female weight"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" [ngModel]="fetchedBreed?.maxFemaleWeight" name="maxFemaleWeight" placeholder="max female weight"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -111,30 +113,30 @@
           <ion-row class="ion-justify-content-center">
             <ion-col size="12" size-md="12" class="ion-align-items-center ion-text-center">
               <ion-item lines="none">
-                <ion-input type="number" id="input-btn" ngModel name="heightUnit" placeholder="height unit"></ion-input>
+                <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.heightUnit" name="heightUnit" placeholder="height unit"></ion-input>
               </ion-item>
             </ion-col>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" id="input-btn" ngModel name="minMaleHeight" placeholder="min male height"></ion-input>
+                  <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.minMaleHeight" name="minMaleHeight" placeholder="min male height"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" id="input-btn" ngModel name="maxMaleHeight" placeholder="max male height"></ion-input>
+                  <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.maxMaleHeight" name="maxMaleHeight" placeholder="max male height"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
             <ion-row class="ion-justify-content-center">
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="minFemaleHeight" placeholder="min female height"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" [ngModel]="fetchedBreed?.minFemaleHeight" name="minFemaleHeight" placeholder="min female height"></ion-input>
                 </ion-item>
               </ion-col>
               <ion-col size="6" size-md="6" class="ion-align-items-center ion-text-center">
                 <ion-item lines="none">
-                  <ion-input type="number" class="small-font" id="input-btn" ngModel name="maxFemaleHeight" placeholder="max female height"></ion-input>
+                  <ion-input type="number" class="small-font" id="input-btn" [ngModel]="fetchedBreed?.maxFemaleHeight" name="maxFemaleHeight" placeholder="max female height"></ion-input>
                 </ion-item>
               </ion-col>
             </ion-row>
@@ -144,118 +146,121 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="number" id="input-btn" ngModel name="originCountry" placeholder="origin country"></ion-input>
+            <ion-input type="number" id="input-btn" [ngModel]="fetchedBreed?.originCountry" name="originCountry" placeholder="origin country"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="otherNames" placeholder="other names"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.otherNames" name="otherNames" placeholder="other names"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc1" placeholder="description1"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc1" name="desc1" placeholder="description1"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc2" placeholder="description2"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc2" name="desc2" placeholder="description2"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc3" placeholder="description3"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc3" name="desc3" placeholder="description3"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc4" placeholder="description4"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc4" name="desc4" placeholder="description4"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc5" placeholder="description5"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc5" name="desc5" placeholder="description5"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc6" placeholder="description6"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc6" name="desc6" placeholder="description6"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc7" placeholder="description7"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc7" name="desc7" placeholder="description7"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc8" placeholder="description8"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc8" name="desc8" placeholder="description8"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc9" placeholder="description9"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc9" name="desc9" placeholder="description9"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc10" placeholder="description10"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc10" name="desc10" placeholder="description10"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc11" placeholder="description11"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc11" name="desc11" placeholder="description11"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc12" placeholder="description12"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc12" name="desc12" placeholder="description12"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc13" placeholder="description13"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc13" name="desc13" placeholder="description13"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="6" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc14" placeholder="description14"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc14" name="desc14" placeholder="description14"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
       <ion-row class="ion-justify-content-center">
-        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
+        <ion-col size="12" size-md="8" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="desc15" placeholder="description15"></ion-input>
-          </ion-item>
-        </ion-col>
-        <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
-          <ion-item lines="none">
-            <ion-input type="file" multiple="true" id="input-btn" ngModel name="images" placeholder="images ( up to 9 )" (change)="uploadFiles($event)"></ion-input>
+            <ion-input type="text" id="input-btn" [ngModel]="fetchedBreed?.desc15" name="desc15" placeholder="description15"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-    </form>
-    <ion-row class="ion-justify-content-center" id="add-btn-row">
-      <ion-col size-md="3" class="ion-text-center">
-        <ion-button shape="round" id="add-btn" color="light" (click)="onSubmit(breedForm)">
-          <span>Submit</span>
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="12" size-md="8" class="ion-align-items-center ion-text-center">
+          <ion-item lines="none">
+            <ion-label position="stacked" class="file-input-label">image ( up to 9 )</ion-label>
+            <ion-input type="file" multiple="true" id="input-btn" [ngModel]="fetchedBreed?.BreedImages" name="images" placeholder="images ( up to 9 )" (change)="uploadFiles($event)"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center" id="add-btn-row">
+        <ion-col size-md="3" class="ion-text-center">
+          <ion-button shape="round" id="add-btn" color="light" (click)="onSubmit(breedForm)">
+            <span>Submit</span>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

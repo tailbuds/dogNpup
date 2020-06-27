@@ -14,6 +14,7 @@
         width: 100%;
         position: fixed;
         bottom: 0;
+        z-index: 999;
     }
 
     #add-btn {
@@ -54,6 +55,16 @@ form {
     --padding-end: 15px;
     color: #606060;
     margin-bottom: 15px;
+}
+
+.file-input-label {
+    font-weight: 500;
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    margin-bottom: 12px;
+    color: rgba(0, 0, 0, 0.4);
 }
 
 .btn-label {

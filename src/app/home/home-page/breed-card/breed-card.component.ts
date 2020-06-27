@@ -38,6 +38,10 @@ export class BreedCardComponent implements OnInit {
 
   }
 
+  // updateBreed() {
+  //   this.homeService.updateBreed(this.breed.breedId);
+  // }
+
   deleteBreed() {
     this.homeService.deleteBreed(this.breed.breedId);
   }
