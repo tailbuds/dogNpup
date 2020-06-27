@@ -1,4 +1,4 @@
-import { Breed } from './../breed.model';
+import { LoadingController } from '@ionic/angular';
 import { HomePageService } from './home-page.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -11,20 +11,32 @@ import { Subscription } from 'rxjs';
 export class HomePagePage implements OnInit, OnDestroy {
 
   breedSub = new Subscription();
-
+  isLoading = false;
   breeds = [];
 
-  constructor( private homePageService: HomePageService) { }
+  constructor( private homePageService: HomePageService, private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
+    this.isLoading = true;
+    this.loading();
+    this.homePageService.getAllBreeds();
     this.breedSub = this.homePageService.updatedBreed.subscribe( updatedBreeds => {
+      this.loadingCtrl.dismiss();
+      this.isLoading = false;
       this.breeds = updatedBreeds;
+      console.log('Breeds : ' , this.breeds);
     });
-    console.log( 'Home Page', this.breeds);
   }
 
-  ionViewDidEnter() {
-    this.homePageService.getAllBreeds();
+  loading(){
+    this.loadingCtrl.create({
+      message: 'Fetching Breeds ...',
+      keyboardClose : true,
+      spinner : 'lines-small',
+      cssClass : 'loadingClass'
+    }).then(loadingEl => {
+      loadingEl.present();
+    });
   }
 
   ngOnDestroy() {

@@ -1,7 +1,7 @@
 import { Breed } from './../../breed.model';
 import { HomePageService } from './../home-page.service';
 import { Component, OnInit, Input } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController } from '@ionic/angular';
 
 @Component({
   selector: 'app-breed-card',
@@ -12,7 +12,8 @@ export class BreedCardComponent implements OnInit {
 
   @Input() breed;
 
-  constructor(private homeService: HomePageService, private alertController: AlertController) { }
+  constructor(private homeService: HomePageService,
+              private alertController: AlertController ) { }
 
   ngOnInit() { }
 
@@ -38,6 +39,6 @@ export class BreedCardComponent implements OnInit {
   }
 
   deleteBreed() {
-    this.homeService.deleteBreed(this.breed.id);
+    this.homeService.deleteBreed(this.breed.breedId);
   }
 }

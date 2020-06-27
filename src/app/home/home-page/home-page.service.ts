@@ -13,7 +13,6 @@ export class HomePageService {
 
   updatedBreed = new Subject<Breed[]>();
 
-  private breeds: Breed[];
   private allBreeds = [];
 
   constructor(private http: HttpClient, private router: Router) { }
@@ -27,18 +26,14 @@ export class HomePageService {
       }
     ]>('https://heydog.tailbuds.com/breeds').subscribe(fetchedBreeds => {
       this.allBreeds = fetchedBreeds;
-      console.log(this.allBreeds);
       this.updatedBreed.next(this.allBreeds);
     });
   }
 
   deleteBreed(id: string) {
-    console.log(this.breeds);
-    this.breeds = this.breeds.filter(b => {
-      return b.id !== id;
-    });
-    console.log(this.breeds);
-    this.updatedBreed.next(this.breeds);
+    console.log(this.allBreeds);
+    console.log(id);
+    this.updatedBreed.next(this.allBreeds);
   }
 
   addBreed(formData: FormData) {

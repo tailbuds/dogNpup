@@ -9,7 +9,11 @@ const routes: Routes = [
     component: HomePagePage
   },
   {
-    path: 'breedForm',
+    path: 'add',
+    loadChildren: () => import('./breed-form/breed-form.module').then( m => m.BreedFormPageModule)
+  },
+  {
+    path: 'update/:breedId',
     loadChildren: () => import('./breed-form/breed-form.module').then( m => m.BreedFormPageModule)
   }
 ];
