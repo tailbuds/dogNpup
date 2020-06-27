@@ -8,12 +8,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid class="ion-no-padding">
+  <ion-label color="danger" *ngIf="breeds.length < 1">
+    <h1 class="ion-text-center" id="error">No breeds Found</h1>
+  </ion-label>
+  <ion-grid class="ion-no-padding" *ngIf="breeds.length >= 1">
     <ion-row class="ion-justify-content-center" id="card-row">
       <ion-col size="10" size-md="4" size-lg="3" class="ion-text-center" *ngFor="let breedItem of breeds">
         <app-breed-card [breed]="breedItem"></app-breed-card>
       </ion-col>
     </ion-row>
+  </ion-grid>
+  <ion-grid class="ion-no-padding">
     <ion-row class="ion-justify-content-center" id="add-btn-row">
       <ion-col size-md="3" class="ion-text-center">
         <ion-button shape="round" id="add-btn" color="light" [routerLink]="['/','home','homePage','breedForm']">

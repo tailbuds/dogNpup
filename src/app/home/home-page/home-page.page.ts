@@ -12,7 +12,7 @@ export class HomePagePage implements OnInit, OnDestroy {
 
   breedSub = new Subscription();
 
-  breeds: Breed[];
+  breeds = [];
 
   constructor( private homePageService: HomePageService) { }
 
@@ -20,10 +20,11 @@ export class HomePagePage implements OnInit, OnDestroy {
     this.breedSub = this.homePageService.updatedBreed.subscribe( updatedBreeds => {
       this.breeds = updatedBreeds;
     });
+    console.log( 'Home Page', this.breeds);
   }
 
   ionViewDidEnter() {
-    this.breeds = this.homePageService.getAllBreeds();
+    this.homePageService.getAllBreeds();
   }
 
   ngOnDestroy() {

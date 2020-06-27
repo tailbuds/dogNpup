@@ -11,8 +11,8 @@
   <div id="header">
     <h1 class="ion-no-margin ion-text-center title">Upload Data</h1>
   </div>
-  <form class="form"  #breedForm="ngForm" (ngSubmit)="onSubmit(breedForm)">
-    <ion-grid class="ion-no-padding">
+  <ion-grid class="ion-no-padding">
+  <form class="form"  #breedForm="ngForm">
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
@@ -28,12 +28,12 @@
       <ion-row class="ion-justify-content-center">
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="bgImg" placeholder="background image"></ion-input>
+            <ion-input type="file" id="input-btn" ngModel name="bgImg" placeholder="background image"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="puppyImg" placeholder="puppy image"></ion-input>
+            <ion-input type="file" id="input-btn" ngModel name="puppyImg" placeholder="puppy image"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -245,19 +245,17 @@
         </ion-col>
         <ion-col size="12" size-md="4" class="ion-align-items-center ion-text-center">
           <ion-item lines="none">
-            <ion-input type="text" id="input-btn" ngModel name="tagline" placeholder="images ( up to 9 )"></ion-input>
+            <ion-input type="file" multiple="true" id="input-btn" ngModel name="images" placeholder="images ( up to 9 )" (change)="uploadFiles($event)"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
-    </ion-grid>
-    <ion-grid class="ion-no-padding">
-      <ion-row class="ion-justify-content-center" id="add-btn-row">
-        <ion-col size="12" size-md="3">
-          <ion-button type="submit" shape="round" id="add-btn" class="ion-hide-md" color="light" [routerLink]="['/']">
-            <span>Submit</span>
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </form>
+    </form>
+    <ion-row class="ion-justify-content-center" id="add-btn-row">
+      <ion-col size-md="3" class="ion-text-center">
+        <ion-button shape="round" id="add-btn" color="light" (click)="onSubmit(breedForm)">
+          <span>Submit</span>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

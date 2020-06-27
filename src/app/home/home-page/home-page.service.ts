@@ -1,6 +1,8 @@
 import { Breed } from './../breed.model';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,177 +13,23 @@ export class HomePageService {
 
   updatedBreed = new Subject<Breed[]>();
 
-  private breeds: Breed[] = [
-  {
-      id: '1',
-      name: 'Afador',
-      tagline: '',
-      bgImg: '',
-      puppyImg: '../../../assets/dog1.jpg',
-      minLife: null,
-      maxLife: null,
-      learningRate: '',
-      minLitter: null,
-      maxLitter: null,
-      size: '',
-      weightUnit: null,
-      minMaleWeight: null,
-      maxMaleWeight: null,
-      minFemaleWeight: null,
-      maxFemaleWeight: null,
-      heightUnit: null,
-      minMaleHeight: null,
-      maxMaleHeight: null,
-      minFemaleHeight: null,
-      maxFemaleHeight: null,
-      originCountry: null,
-      otherNames: '',
-      desc1: '',
-      desc2: '',
-      desc3: '',
-      desc4: '',
-      desc5: '',
-      desc6: '',
-      desc7: '',
-      desc8: '',
-      desc9: '',
-      desc10: '',
-      desc11: '',
-      desc12: '',
-      desc13: '',
-      desc14: '',
-      desc15: '',
-      images: ['']
-    },
-    {
-      id: '2',
-      name: 'Akita Chow',
-      tagline: '',
-      bgImg: '',
-      puppyImg: '../../../assets/dog2.jpg',
-      minLife: null,
-      maxLife: null,
-      learningRate: '',
-      minLitter: null,
-      maxLitter: null,
-      size: '',
-      weightUnit: null,
-      minMaleWeight: null,
-      maxMaleWeight: null,
-      minFemaleWeight: null,
-      maxFemaleWeight: null,
-      heightUnit: null,
-      minMaleHeight: null,
-      maxMaleHeight: null,
-      minFemaleHeight: null,
-      maxFemaleHeight: null,
-      originCountry: null,
-      otherNames: '',
-      desc1: '',
-      desc2: '',
-      desc3: '',
-      desc4: '',
-      desc5: '',
-      desc6: '',
-      desc7: '',
-      desc8: '',
-      desc9: '',
-      desc10: '',
-      desc11: '',
-      desc12: '',
-      desc13: '',
-      desc14: '',
-      desc15: '',
-      images: ['']
-    },
-    {
-      id: '3',
-      name: 'Pugabull',
-      tagline: '',
-      bgImg: '',
-      puppyImg: '../../../assets/dog3.jpg',
-      minLife: null,
-      maxLife: null,
-      learningRate: '',
-      minLitter: null,
-      maxLitter: null,
-      size: '',
-      weightUnit: null,
-      minMaleWeight: null,
-      maxMaleWeight: null,
-      minFemaleWeight: null,
-      maxFemaleWeight: null,
-      heightUnit: null,
-      minMaleHeight: null,
-      maxMaleHeight: null,
-      minFemaleHeight: null,
-      maxFemaleHeight: null,
-      originCountry: null,
-      otherNames: '',
-      desc1: '',
-      desc2: '',
-      desc3: '',
-      desc4: '',
-      desc5: '',
-      desc6: '',
-      desc7: '',
-      desc8: '',
-      desc9: '',
-      desc10: '',
-      desc11: '',
-      desc12: '',
-      desc13: '',
-      desc14: '',
-      desc15: '',
-      images: ['']
-    },
-    {
-      id: '4',
-      name: 'Auggie',
-      tagline: '',
-      bgImg: '',
-      puppyImg: '../../../assets/dog4.jpg',
-      minLife: null,
-      maxLife: null,
-      learningRate: '',
-      minLitter: null,
-      maxLitter: null,
-      size: '',
-      weightUnit: null,
-      minMaleWeight: null,
-      maxMaleWeight: null,
-      minFemaleWeight: null,
-      maxFemaleWeight: null,
-      heightUnit: null,
-      minMaleHeight: null,
-      maxMaleHeight: null,
-      minFemaleHeight: null,
-      maxFemaleHeight: null,
-      originCountry: null,
-      otherNames: '',
-      desc1: '',
-      desc2: '',
-      desc3: '',
-      desc4: '',
-      desc5: '',
-      desc6: '',
-      desc7: '',
-      desc8: '',
-      desc9: '',
-      desc10: '',
-      desc11: '',
-      desc12: '',
-      desc13: '',
-      desc14: '',
-      desc15: '',
-      images: ['']
-    }
-  ];
+  private breeds: Breed[];
+  private allBreeds = [];
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   getAllBreeds() {
-    return [...this.breeds];
+    this.http.get<[
+      {
+        id: number,
+        name: string,
+        puppyImg: string,
+      }
+    ]>('https://heydog.tailbuds.com/breeds').subscribe(fetchedBreeds => {
+      this.allBreeds = fetchedBreeds;
+      console.log(this.allBreeds);
+      this.updatedBreed.next(this.allBreeds);
+    });
   }
 
   deleteBreed(id: string) {
@@ -193,7 +41,20 @@ export class HomePageService {
     this.updatedBreed.next(this.breeds);
   }
 
-  addBreed(formData: FormData){
+  addBreed(formData: FormData) {
     console.log('breed Added');
+    let breedHeaders = new HttpHeaders();
+    breedHeaders = breedHeaders.set('Content-Type', 'multipart/form-data')
+    .set('Accept', 'application/json')
+    .set('x-api-key', 'iz5o853a5pqSNjRtqg89XyBiK6kY');
+    const options = {
+      headers : breedHeaders,
+    };
+    this.http.post<{ message: string }>('https://heydog.tailbuds.com/breeds', formData, options).subscribe(data => {
+      console.log(data);
+      this.router.navigate(['/']);
+    }, error => {
+      console.log(error);
+    });
   }
 }

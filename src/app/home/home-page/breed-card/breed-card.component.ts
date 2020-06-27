@@ -10,7 +10,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class BreedCardComponent implements OnInit {
 
-  @Input() breed: Breed;
+  @Input() breed;
 
   constructor(private homeService: HomePageService, private alertController: AlertController) { }
 
