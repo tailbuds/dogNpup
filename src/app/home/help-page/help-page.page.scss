@@ -14,3 +14,17 @@
     font-size: 19px;
     margin-bottom: 20px;
 }
+
+#header-img {
+    height: 40px;
+    padding-right: 85px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    #header-img {
+        height: 40px;
+        padding-right: 50px;
+        cursor: pointer;
+    }
+}

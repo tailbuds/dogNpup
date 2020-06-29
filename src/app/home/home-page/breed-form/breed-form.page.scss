@@ -9,6 +9,13 @@
     }
 }
 
+#header-img {
+    height: 40px;
+    padding-right: 85px;
+    cursor: pointer;
+}
+
+
 @media only screen and (max-width: 600px) {
     #add-btn-row {
         width: 100%;
@@ -28,6 +35,12 @@
             font-weight: 700;
             font-size: 1.5rem;
         }
+    }
+
+    #header-img {
+        height: 40px;
+        padding-right: 50px;
+        cursor: pointer;
     }
 }
 

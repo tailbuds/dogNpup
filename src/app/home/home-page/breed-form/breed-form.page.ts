@@ -17,6 +17,7 @@ export class BreedFormPage implements OnInit {
   private breedId = null;
   isLoading = false;
   images;
+  fetchedImages;
 
   constructor(
     private homePageService: HomePageService,
@@ -31,7 +32,7 @@ export class BreedFormPage implements OnInit {
         this.breedId = paramMap.get('breedId');
         this.isLoading = true;
         this.loading();
-        this.homePageService.getBreed(this.breedId).subscribe( (breedData) => {
+        this.homePageService.getBreed(this.breedId).subscribe((breedData) => {
           this.isLoading = false;
           this.loadingCtrl.dismiss();
           console.log(breedData);
@@ -77,6 +78,7 @@ export class BreedFormPage implements OnInit {
             BreedImages: breedData.BreedImages,
           };
           console.log(this.fetchedBreed);
+          this.fetchedImages = breedData.BreedImages;
         });
       } else {
         this.mode = 'add';
@@ -141,51 +143,60 @@ export class BreedFormPage implements OnInit {
       // console.log(formData.get('images'));
       this.homePageService.addBreed(formData);
     } else if (this.mode === 'update') {
-      const formTextData = new FormData();
-      formTextData.set('name', form.value.name);
-      formTextData.set('tagline', form.value.tagline);
-      formTextData.set('minLife', form.value.minLife);
-      formTextData.set('maxLife', form.value.maxLife);
-      formTextData.set('learningRate', form.value.learningRate);
-      formTextData.set('minLitter', form.value.minLitter);
-      formTextData.set('maxLitter', form.value.maxLitter);
-      formTextData.set('size', form.value.size);
-      formTextData.set('weightUnit', form.value.weightUnit);
-      formTextData.set('minMaleWeight', form.value.minMaleWeight);
-      formTextData.set('maxMaleWeight', form.value.maxMaleWeight);
-      formTextData.set('minFemaleWeight', form.value.minFemaleWeight);
-      formTextData.set('maxFemaleWeight', form.value.maxFemaleWeight);
-      formTextData.set('heightUnit', form.value.heightUnit);
-      formTextData.set('minMaleHeight', form.value.minMaleHeight);
-      formTextData.set('maxMaleHeight', form.value.maxMaleHeight);
-      formTextData.set('minFemaleHeight', form.value.minFemaleHeight);
-      formTextData.set('maxFemaleHeight', form.value.maxFemaleHeight);
-      formTextData.set('originCountry', form.value.originCountry);
-      formTextData.set('otherNames', form.value.otherNames);
-      formTextData.set('desc1', form.value.desc1);
-      formTextData.set('desc2', form.value.desc2);
-      formTextData.set('desc3', form.value.desc3);
-      formTextData.set('desc4', form.value.desc4);
-      formTextData.set('desc5', form.value.desc5);
-      formTextData.set('desc6', form.value.desc6);
-      formTextData.set('desc7', form.value.desc7);
-      formTextData.set('desc8', form.value.desc8);
-      formTextData.set('desc9', form.value.desc9);
-      formTextData.set('desc10', form.value.desc10);
-      formTextData.set('desc11', form.value.desc11);
-      formTextData.set('desc12', form.value.desc12);
-      formTextData.set('desc13', form.value.desc13);
-      formTextData.set('desc14', form.value.desc14);
+      const formTextData = {
+        name: form.value.name,
+        tagline: form.value.tagline,
+        minLife: form.value.minLife,
+        maxLife: form.value.maxLife,
+        learningRate: form.value.learningRate,
+        minLitter: form.value.minLitter,
+        maxLitter: form.value.maxLitter,
+        size: form.value.size,
+        weightUnit: form.value.weightUnit,
+        minMaleWeight: form.value.minMaleWeight,
+        maxMaleWeight: form.value.maxMaleWeight,
+        minFemaleWeight: form.value.minFemaleWeight,
+        maxFemaleWeight: form.value.maxFemaleWeight,
+        heightUnit: form.value.heightUnit,
+        minMaleHeight: form.value.minMaleHeight,
+        maxMaleHeight: form.value.maxMaleHeight,
+        minFemaleHeight: form.value.minFemaleHeight,
+        maxFemaleHeight: form.value.maxFemaleHeight,
+        originCountry: form.value.originCountry,
+        otherNames: form.value.otherNames,
+        desc1: form.value.desc1,
+        desc2: form.value.desc2,
+        desc3: form.value.desc3,
+        desc4: form.value.desc4,
+        desc5: form.value.desc5,
+        desc6: form.value.desc6,
+        desc7: form.value.desc7,
+        desc8: form.value.desc8,
+        desc9: form.value.desc9,
+        desc10: form.value.desc10,
+        desc11: form.value.desc11,
+        desc12: form.value.desc12,
+        desc13: form.value.desc13,
+        desc14: form.value.desc14
+      };
 
       const formImgData = new FormData();
       formImgData.append('bgImg', form.value.bgImg);
       formImgData.append('puppyImg', form.value.puppyImg);
       console.log(this.images);
-      for (const i of Object.keys(this.images)) {
-        formImgData.append('images', this.images[i].name);
+      console.log(this.fetchedImages);
+      if (this.images){
+        for (const i of Object.keys(this.images)) {
+          formImgData.append('images', this.images[i].name);
+        }
+      } else {
+        for (const i of Object.keys(this.fetchedImages)) {
+          formImgData.append('images', this.fetchedImages);
+        }
       }
-      console.log(formImgData.get('images'));
-      this.homePageService.updateBreed(this.breedId, formTextData, formImgData);
+      console.log(formTextData);
+      console.log(formImgData.get('puppyImg'));
+      // this.homePageService.updateBreed(this.breedId, formTextData, formImgData);
     }
   }
 
